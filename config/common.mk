@@ -155,7 +155,8 @@ endif
 
 PRODUCT_PACKAGES += \
     LineageSettingsProvider \
-    Updater
+    Updater \
+    OmniJaws
 
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
@@ -300,6 +301,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/lineage/build/target/product/security/lineage
+
+# Pixel SystemUI clock plugins
+$(call inherit-product-if-exists, vendor/pixelclocks/pixelclocks.mk)
 
 include vendor/lineage/config/version.mk
 
