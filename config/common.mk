@@ -305,6 +305,11 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # Pixel SystemUI clock plugins
 $(call inherit-product-if-exists, vendor/pixelclocks/pixelclocks.mk)
 
+# UDFPS animations
+ifndef TARGET_HAS_NO_UDFPS
+$(call inherit-product-if-exists, vendor/udfpsanimations/udfpsanimations.mk)
+endif
+
 include vendor/lineage/config/version.mk
 
 -include vendor/lineage-priv/keys/keys.mk
